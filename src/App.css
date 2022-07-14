@@ -1,0 +1,416 @@
+
+/* 
+
+Table of content : 
+    - Loader
+    - Container
+    - Navbar
+    - Slider
+    - Movies list
+    - See more
+    - Footer
+    - Admin login
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root
+{
+    --mainColor : rgb(204, 82, 0);
+    --hoverColor : rgba(204, 82, 0, 0.678);
+}
+
+*
+{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Loader */
+
+.load
+{
+    height: 3px !important;
+    background-color: #000000 !important;
+}
+
+.load > div
+{
+    background-color: var(--mainColor) !important;
+}
+
+.loadertxt
+{
+    margin: 10px;
+}
+
+.loading
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader 
+{
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 3px solid;
+  border-color: #FFF #FFF transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.loader::after 
+{
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid;
+  border-color: transparent var(--mainColor) var(--mainColor);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  animation: rotationBack 0.5s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes rotation
+{
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+    
+@keyframes rotationBack 
+{
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+
+/* Container */
+
+.movieApp-c
+{
+    color: #ffff;
+    min-height: 100vh;
+    background: #000000;
+    background: linear-gradient(to top, #181818, #000000);
+    overflow-x : hidden;
+}
+
+
+/* Navbar */
+
+.menu
+{
+    margin: 5px;
+    color: #ffff;
+}
+
+.nav-mobile
+{
+    transition: display 0.3s ease-in-out;
+}
+
+.movie-nav li
+{
+    margin: 20px;
+}
+
+.movie-nav li a
+{
+    font-weight: bold;
+    color: var(--mainColor);
+}
+
+.movie-nav li a:hover
+{
+    color: var(--hoverColor);
+}
+
+.movie-nav li a:focus
+{
+    color: var(--hoverColor);
+}
+
+@media (max-width: 768px)
+{
+    .movie-nav
+    {
+        background-color: #1d1d1d;
+        border-radius: 5px;
+    }
+}
+
+.search
+{
+    background-color: #0f0f0f;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-right: -25px;
+}
+
+.m-search
+{
+    width: 100%;
+    height: 40px;
+    margin-top: -10px;
+}
+
+.fa-search
+{
+    cursor: pointer;
+}
+
+/* Slider */
+
+
+.image-slider
+{
+    border-radius: 10px;
+}
+
+@media (min-width: 768px)
+{
+    .image-slider
+    {
+        height: 450px;
+    }
+}
+
+.slider-text
+{
+    text-align: start !important;
+    width: 290px;
+}
+
+.slider-text h2
+{
+    font-weight: bold;
+}
+
+.slider-text button
+{
+    background-color: var(--mainColor);
+    border-radius: 10px;
+    border: none;
+    padding: 17px;
+    text-transform: uppercase;
+}
+
+
+
+.home-section-list
+{
+    margin-top: 50px;
+}
+
+.home-section-list > h5
+{
+    padding : 10px;
+}
+
+/* Movies list */
+
+.movie-card
+{
+    margin-bottom : 10px;
+    border-radius : 5px;
+    cursor : pointer;
+}
+
+.activeR
+{
+    border-bottom : 3px solid var(--mainColor);
+}
+
+.text-yellow
+{
+    color : var(--mainColor);
+}
+
+.stars
+{
+    margin-left : 100px
+}
+
+.card-mv
+{
+    width : 400px;
+}
+
+/* See more */
+
+.see-more
+{
+    cursor : pointer;
+    color : var(--mainColor);
+    margin-top : 20px;
+}
+
+.see-more a
+{
+    color : var(--mainColor);
+    transition : 0.3s;
+    text-decoration : none;
+}
+
+.see-more a:hover
+{
+    color : var(--hoverColor);
+}
+
+.see-more p
+{
+    margin-top: -20px;
+    font-size: 35px;
+}
+
+.bounce 
+{
+    margin-top: 50px;
+    margin-bottom: -30px;
+    -moz-animation: bounce 2s infinite;
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+}
+  
+@-moz-keyframes bounce 
+{
+    0%, 20%, 50%, 80%, 100% {
+      -moz-transform: translateY(0);
+      transform: translateY(0);
+    }
+    40% {
+      -moz-transform: translateY(-30px);
+      transform: translateY(-30px);
+    }
+    60% {
+      -moz-transform: translateY(-15px);
+      transform: translateY(-15px);
+    }
+}
+
+@-webkit-keyframes bounce 
+{
+    0%, 20%, 50%, 80%, 100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    40% {
+      -webkit-transform: translateY(-30px);
+      transform: translateY(-30px);
+    }
+    60% {
+      -webkit-transform: translateY(-15px);
+      transform: translateY(-15px);
+    }
+}
+@keyframes bounce 
+{
+    0%, 20%, 50%, 80%, 100% {
+      -moz-transform: translateY(0);
+      -ms-transform: translateY(0);
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    40% {
+      -moz-transform: translateY(-30px);
+      -ms-transform: translateY(-30px);
+      -webkit-transform: translateY(-30px);
+      transform: translateY(-30px);
+    }
+    60% {
+      -moz-transform: translateY(-15px);
+      -ms-transform: translateY(-15px);
+      -webkit-transform: translateY(-15px);
+      transform: translateY(-15px);
+    }
+}
+
+/* Footer */
+
+.s-buttons a
+{
+    color: white;
+    text-decoration: none;
+    margin-left: 5px;
+    background-color: #181818;
+    padding: 10px;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.s-buttons a:hover
+{
+    color: var(--mainColor);
+}
+
+.s-buttons a i
+{
+    margin: 5px;
+}
+
+/* Admin login */
+
+.admin-login
+{
+    background-color: #fff;
+    width: 320px !important;
+    padding: 15px;
+    border-radius: 5px;
+    position: absolute;
+    top : 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.admin-login > form > h3
+{
+    color: var(--mainColor);
+}
+
+.admin-login > form > .inputs > div input
+{
+    border: none;
+    outline: none;
+    margin: 10px;
+    background-color: #eee;
+    height: 40px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.admin-login > form > .inputs > div input[type="submit"]
+{
+    background-color: var(--mainColor);
+    color: #fff;
+    width: 223px;
+    transition: 0.3s;
+}
+
+.admin-login > form > .inputs > div input[type="submit"]:hover
+{
+    background-color: var(--hoverColor);
+}
