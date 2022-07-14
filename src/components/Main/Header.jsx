@@ -13,7 +13,6 @@ const Header = () => {
 
   return (
     <>
-    <LoadingBar color='#cc5200' progress={progress} onLoaderFinished={() => setProgress(0)} />
     <div id='nav-movie'>
         <div className='container-fluid'>
             <div className='navbar navbar-expand-md'>
